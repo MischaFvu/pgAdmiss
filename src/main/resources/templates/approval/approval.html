@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Approval Page</title>
+    <link rel="stylesheet" href="../../static/css/approval.css">
+    <link rel="stylesheet" href="../../static/css/styles.css">
+
+</head>
+<body>
+<div id="nav-container"></div>
+
+<div class="container">
+
+    <h1>List of pending approvals</h1>
+    <div class="filters">
+        <input type="text" id="majorInput" placeholder="Search by Major">
+        <button onclick="search()">Search</button>
+    </div>
+
+    <div class="filters">
+        <input type="text" id="languageScoreInput" placeholder="Search by language score">
+        <button onclick="search()">Search</button>
+    </div>
+
+    <div class="filters">
+        <input type="text" id="statusInput" placeholder="Search by Approval status">
+        <button onclick="search()">Search</button>
+    </div>
+
+    <table id="applicationTable">
+    </table>
+    <div id="pagination">
+    </div>
+</div>
+
+<script src="../../static/js/approval.js"></script>
+<script src="../../static/js/navigation.js"></script>
+
+</body>
+</html>

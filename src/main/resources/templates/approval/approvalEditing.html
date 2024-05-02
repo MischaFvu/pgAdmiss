@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Approval Editing Page</title>
+    <link rel="stylesheet" href="../../static/css/approvalEditing.css">
+    <link rel="stylesheet" href="../../static/css/styles.css">
+
+</head>
+<body>
+    <div id="nav-container"></div>
+
+<div class="container">
+
+    <h1>Approval Editing</h1>
+    <form id="Approval Sheet">
+        <div class="form-group">
+            <label for="app_id">Applicantion ID:</label>
+            <input type="text" id="app_id" name="Application ID" readonly>
+        </div>
+        <div class="form-group">
+            <label for="requestDetails">Request Details:</label>
+            <textarea id="requestDetails" name="requestDetails" readonly></textarea>
+        </div>
+        <div id="approvalFields"></div>
+        <div class="form-group">
+            <label for="approvalResult">Approval Result:</label>
+            <select id="approvalResult" name="approvalResult">
+                <option value="approved">Approved</option>
+                <option value="rejected">Rejected</option>
+            </select>
+        </div>
+        <button type="submit">Submit Approval</button>
+    </form>
+</div>
+
+<script src="../../static/js/approvalEditing.js"></script>
+<script src="../../static/js/navigation.js"></script>
+
+</body>
+</html>

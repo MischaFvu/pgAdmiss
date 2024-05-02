@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postgraduate Admission System</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="../../static/css/message.css">
+    <link rel="stylesheet" href="../../static/css/navigation.css">
+</head>
+<body>
+    <div id="nav-container"></div>
+
+    <div class="main-container">
+        <div class="content-wrapper">
+            <div class="msg-category-con">
+                <ul class="msg-category-menu">
+                    <li class="msg-category-item">
+                        <span class="categroy-title">Pending Approval</span>
+                    </li>
+                    <li class="msg-category-item">
+                        <span class="categroy-title">Completed Approval</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="msg-list-con">
+                <div class="table-panel">
+                    <div class="table_list-con">
+                        <table cellspacing="0" cellpadding="0" border="0" style="width: 701px;">
+                            <colgroup>
+                                <col width="60">
+                                <col width="200">
+                                <col width="140">
+                                <col width="160">
+                                <col width="140">
+                                <col width="140">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th class="table-head-checkbox">
+                                        <input type="checkbox" name="checkAll" id="checkAll">
+                                    </th>
+                                    <th class="table-head-cell">Task</th>
+                                    <th class="table-head-cell">Sender</th>
+                                    <th class="table-head-cell">Sending Time</th>
+                                    <th class="table-head-cell">Upload Time</th>
+                                    <th class="table-head-cell">Task Type</th>
+
+                                </tr>
+                            </thead>
+                            <tbody id="table-body">
+                            </tbody>
+
+                        </table>
+
+                    </div>
+                    <div class="table-page-con">
+                        <ul class="table-page">
+                            Total<span id="itemNum">0</span>item
+                            <li class="page-previous">
+                                <a href="javascript:prevPage()"><i class="previous-icon" id="page-previous"></i></a>
+                            </li>
+                            <li class="page-item">
+                                Page<span id="pageNum">1</span>/<span id="pageTotal">1</span>
+                            </li>
+                            <li class="page-next">
+                                <a href="javascript:nextPage()"><i class="next-icon" id="page-next"></i></a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <script src="../../static/js/navigation.js"></script>
+    <script src="../../static/js/message.js"></script>
+</body>
+</html>
