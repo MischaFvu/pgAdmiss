@@ -1,6 +1,7 @@
 package com.webapp.pgadmiss.entity;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
@@ -14,17 +15,17 @@ public class Student extends BaseEntity {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "stu_id")
-    private int stuId;
+    private UUID stuId;
 
     // Major director_id : User user_id (student) = n : 1
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
 
-    // @NotNull(message = "Student name cannot be null")
-    // @Size(min = 1, max = 255)
+    @NotNull(message = "Student name cannot be null")
+    @Size(min = 1, max = 255)
     @Column(name = "stu_name", nullable = false)
     private String stuName;
 
@@ -48,8 +49,7 @@ public class Student extends BaseEntity {
     @Column(name = "nationality")
     private String nationality;
 
-    // @Pattern(regexp = "[A-Za-z0-9]{15,18}|[A-Za-z0-9]{17}[Xx]", message = "Invalid identity number format")
-    // @Size(max = 20)
+    @Pattern(regexp = "^[1-9]\\d{5}(18|19|20)\\d{2}((0[1-9])|(1[0-2]))(([0-2][1-9])|10|20|30|31)\\d{3}[0-9Xx]$", message = "Invalid identity number format")
     @Column(name = "id_no")
     private String identityNo;
 

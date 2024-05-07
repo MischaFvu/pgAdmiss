@@ -2,15 +2,16 @@ package com.webapp.pgadmiss.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import com.webapp.pgadmiss.dto.ApplicationDto;
 import com.webapp.pgadmiss.entity.Application;
 import com.webapp.pgadmiss.entity.Application.AppStatus;
 import com.webapp.pgadmiss.service.IApplicationService;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.io.Serializable;
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -25,12 +26,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
+@Slf4j
 @RequestMapping(path = "/api", method=RequestMethod.GET, produces = "application/json")
 @Validated
 public class ApplicationController implements Serializable{
 
     private static final long serialVersionUID = 1L;
-    private static final Logger logger = LoggerFactory.getLogger(ApplicationController.class);
 
     @Autowired
     IApplicationService applicationService;
@@ -52,7 +53,7 @@ public class ApplicationController implements Serializable{
 
     @GetMapping("/findApp")
     public String getMethodName(@RequestParam String param) {
-        logger.info("");
+        log.info("");
         return new String();
     }
 
@@ -70,4 +71,9 @@ public class ApplicationController implements Serializable{
         return new String();
     }
 
+    @GetMapping("/app/submit")
+    public String submitApplication (@RequestParam ApplicationDto applicationDto) {
+        return new String();
+    }
+    
 }

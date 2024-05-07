@@ -19,7 +19,7 @@ public class PageUtil {
      * @param totalPage
      * @return
      */
-    public static int covertPageNoToCurPage(int pageNo, int totalPage) {
+    public static int getCurrentPageNum(int pageNo, int totalPage) {
 		if (totalPage <= 0) {
 			return 0;
 		}

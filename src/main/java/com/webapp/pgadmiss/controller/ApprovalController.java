@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class ApprovalController implements Serializable{
 
     private static final long serialVersionUID = 1L;
-    private static final Logger logger = LoggerFactory.getLogger(ApprovalController.class); 
+    private static final Logger log = LoggerFactory.getLogger(ApprovalController.class); 
 
     @Autowired
     IApprovalService approvalService;

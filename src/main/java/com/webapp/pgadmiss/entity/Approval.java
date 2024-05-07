@@ -1,6 +1,7 @@
 package com.webapp.pgadmiss.entity;
 
 import java.sql.Date;
+import java.util.UUID;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -17,9 +18,9 @@ public class Approval extends BaseEntity {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "approval_id")
-    private int approvalId;
+    private UUID approvalId;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "app_id", nullable = false)

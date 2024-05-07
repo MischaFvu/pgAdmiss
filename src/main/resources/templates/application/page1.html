@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>申请单列表</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="img/XJTLU.png">
+    <script src="scripts.js" defer></script>
+    <style>
+       body {
+           font-family: Arial, sans-serif;
+       }
+       .table {
+           width: 100%;
+           border-collapse: collapse;
+       }
+       th, td {
+           border: 1px solid #ddd;
+           padding: 8px;
+           text-align: left;
+       }
+       .search, .pagination {
+           margin: 10px 0;
+       }
+    </style>
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="ysa">准入申请</div>
+        <div class="ysb">
+            <a href="Title.html">上一页</a><br>
+            <table id="applicationsTable">
+                <thead>
+                    <tr>
+                        <th>申请编号</th>
+                        <th>专业名</th>
+                        <th>申请状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 申请数据将在这里动态插入 -->
+                </tbody>
+            </table>
+        </div>
+</body>

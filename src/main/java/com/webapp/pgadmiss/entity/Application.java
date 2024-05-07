@@ -2,6 +2,10 @@ package com.webapp.pgadmiss.entity;
 
 
 
+import java.text.DecimalFormat;
+import java.util.UUID;
+
+
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -14,10 +18,14 @@ public class Application extends BaseEntity{
     private static final long serialVersionUID = 1L;
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "app_id")
-    private int appId;
-    
+    private UUID appId;
+
+    // Format: YY(2) + MajorNo(2) + seq(4)
+    @Column(name = "app_no", length = 8)
+    private String appNo;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "stu_id", nullable = false)
     private Student student;
@@ -26,6 +34,7 @@ public class Application extends BaseEntity{
     @JoinColumn(name = "major_id", nullable = false)
     private Major major;
 
+    // YYYY
     @Column(name = "app_period", nullable = false)
     private int appPeriod;
 
@@ -76,5 +85,8 @@ public class Application extends BaseEntity{
         AUDITING,
         APPROVED
     }
+
+
+
 
 }

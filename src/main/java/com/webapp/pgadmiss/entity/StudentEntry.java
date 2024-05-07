@@ -1,6 +1,7 @@
 package com.webapp.pgadmiss.entity;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
@@ -18,9 +19,9 @@ public class StudentEntry extends BaseEntity {
     private static final long serialVersionUID = 1L;
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "stu_entry_id")
-    private int stuEntryId;
+    private UUID stuEntryId;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "stu_id", nullable = false)

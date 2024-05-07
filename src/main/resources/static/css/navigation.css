@@ -82,6 +82,7 @@ body{
     height: 40px;
     background: #333;
     text-align: center;
+    z-index: 10;
 }
 
 .btli{
@@ -111,11 +112,19 @@ body{
 }
 
 .main-container{
+    transition: margin-left 0.3s;
+    margin-left: 250px;
+    width: calc(100% - 250px);
     height: calc(100% - 60px);
-    overflow: hidden;
+    /* overflow: hidden;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
     background: #f5f7f9;
-    
+    /* flex: 1;
+    overflow-y: auto;   */
+}
+.sidenav-hidden {
+    margin-left: 0;
+    width: 100%;
 }

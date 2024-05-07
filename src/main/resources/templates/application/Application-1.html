@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>申请单列表</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="img/XJTLU.png">
+    <style>
+       body {
+           font-family: Arial, sans-serif;
+       }
+       .table {
+           width: 100%;
+           border-collapse: collapse;
+       }
+       th, td {
+           border: 1px solid #ddd;
+           padding: 8px;
+           text-align: left;
+       }
+       .search, .pagination {
+           margin: 10px 0;
+       }
+    </style>
+</head>
+<body>
+    <div class="search">
+        <input type="text" id="searchField" placeholder="搜索专业名或状态...">
+        <button onclick="searchApplications()">搜索</button>
+    </div>
+    <table id="applicationsTable">
+        <thead>
+            <tr>
+                <th>申请编号</th>
+                <th>专业名</th>
+                <th>申请状态</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody id="applicationsTableBody">
+            <!-- 申请数据将在这里动态插入 -->
+        </tbody>
+    </table>
+    <div class="pagination">
+        <button onclick="previousPage()">上一页</button>
+        <span id="currentPage">1</span>
+        <button onclick="nextPage()">下一页</button>
+    </div>
+
+    <script>
+        // 示例申请数据
+        var applicationsData = [
+            { id: 1, name: "计算机科学", status: "待审核" },
+            { id: 2, name: "电子工程", status: "已通过" },
+            { id: 3, name: "商业管理", status: "待审核" }
+            // 需要时可以添加更多申请数据
+        ];
+
+        // 函数用于填充表格中的申请数据
+        function populateApplicationsTable() {
+            var tableBody = document.getElementById("applicationsTableBody");
+            tableBody.innerHTML = ""; // 清除现有数据
+
+            applicationsData.forEach(function(application) {
+                var row = tableBody.insertRow();
+                row.insertCell(0).textContent = application.id;
+                row.insertCell(1).textContent = application.name;
+                row.insertCell(2).textContent = application.status;
+                // 如有需要，可以添加更多单元格或操作
+            });
+        }
+
+        // 调用函数以在页面加载时填充表格
+        populateApplicationsTable();
+
+        // 这里可以添加用于分页和搜索的功能
+        // 为简单起见，我在此示例中省略了它们
+    </script>
+</body>
+</html>

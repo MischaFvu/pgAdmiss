@@ -1,7 +1,11 @@
 package com.webapp.pgadmiss.entity;
 
+import java.util.UUID;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,9 +23,9 @@ import lombok.ToString;
 public class Message extends BaseEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "msg_id")
-    private int msgId;
+    private UUID msgId;
 
     @Column(name = "msg_text", nullable = false)
     private String msgText;
@@ -38,9 +42,9 @@ public class Message extends BaseEntity {
     @JoinColumn(name = "sender_id", nullable = false)
     private User sender;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "msg_type", nullable = false)
     private MessageType msgType;
-
     
     public enum MessageType {
         AUDIT_TODO,

@@ -1,9 +1,11 @@
 package com.webapp.pgadmiss.service.serviceImpl;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.webapp.pgadmiss.entity.Application;
@@ -13,14 +15,14 @@ import com.webapp.pgadmiss.repository.ApplicationRepository;
 import com.webapp.pgadmiss.repository.StudentRepository;
 import com.webapp.pgadmiss.service.IApplicationService;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
+@Slf4j
 public class ApplicationServiceImpl implements IApplicationService{
 
-    private static final Logger logger = LoggerFactory.getLogger(ApplicationServiceImpl.class);
-
-    private ApplicationRepository applicationRps;
-    private StudentRepository studentRps;
-
+    @Autowired
+    private ApplicationRepository appRepository;
     
     @Override
     public boolean saveApplication(Application application) {
@@ -45,13 +47,13 @@ public class ApplicationServiceImpl implements IApplicationService{
     }
 
     @Override
-    public boolean deleteApplication(int applicationId) {
+    public boolean deleteApplication(UUID applicationId) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'deleteApplication'");
     }
 
     @Override
-    public Application findAppById(int applicationId) {
+    public Application findAppById(UUID applicationId) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getAppById'");
     }

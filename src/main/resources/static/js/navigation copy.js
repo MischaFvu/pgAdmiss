@@ -12,19 +12,15 @@ function loadNavigation() {
         .catch(error => console.error('Failed to load navigation:', error));
 }
 
-
+document.addEventListener('DOMContentLoaded', function() {
+    loadNavigation();
+});
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("nav-container").classList.remove("sidenav-hidden");
-
 }
 
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("nav-container").classList.add("sidenav-hidden");
     
 }
-document.addEventListener('DOMContentLoaded', function() {
-    loadNavigation();
-    openNav();
-});
+

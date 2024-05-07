@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>XJTLU</title>
+        <!-- 我们先进行样式初始化-->
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                text-decoration: none;
+                list-style: none;
+            }
+            .header,.nav,.container,.footer{
+                float: left;
+                width: 100%;
+                box-sizing: border-box;
+            }
+            .header{
+                background: #611372;
+                color: #fff;
+                padding: 20px;
+                text-align: center;
+            }
+            .nav{
+                background: #3c06ea;
+
+            }
+            .nav a{
+                color: #fff;
+                padding: 10px 20px;
+                display: inline-block;
+            }
+            .nav a:hover{
+                background: #c406e5;
+                color: #000;
+            }
+            /*我们让左右两边都固定宽度200*/
+            .lside{
+                width: 300px;
+                float: left;
+            }
+            .rside{
+                width: 300px;
+                float: right;
+            }
+            /*所以中间栏要加左右边距*/
+            .content{
+                margin: 0px 205px;
+            }
+            .lside,.rside,.content{
+                padding: 5px;
+                box-sizing: border-box;
+            }
+            .footer{
+                padding: 10px;
+                background: #3c06ea;
+                color: #fff;
+                text-align: center;
+            }
+            /*最后加个功能，当浏览宽度小于700时，三个栏进行竖排*/
+            @media screen and (max-width:700px) {
+                .lside,.rside,.content{
+                    width: 100%;
+                    margin: 0px;
+                }
+                
+           }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <div class="header">
+                <h1>XJTLU </h1>
+                <p>XI'AN JIAOTONG LIVERPOOL UNIVERSITY</p>
+            </div>  
+            <div class="nav">
+                <div class="ysa"></div>
+                <div class="ysb"></div>
+                <a href="page1.html">准入申请</a>
+                <a href="page2.html">申请单填写</a>
+            </div>
+            <div class="container">
+                <!--主题这里我们要放入三个盒子，分别是左中右,要注意的是我们用margin进行三栏布局
+                中间的栏是自适应的，所以中间的栏放在第三个。-->
+                <div class="lside">
+                    <h2>搜索你感兴趣的专业</h2>
+                    <div class="search">
+                        <input type="text" id="searchField" placeholder="搜索专业名或专业编号...">
+                        <button onclick="searchApplications()">搜索</button>
+                    </div>
+                    <div class="pagination">
+                        <button onclick="previousPage()">上一页</button>
+                        <span id="currentPage">1</span>
+                        <button onclick="nextPage()">下一页</button>
+                    </div>    
+
+                </div>
+                <div class="rside">
+                    <h2>右侧还不知道弄什么（也可以不弄）</h2>
+                    <p>
+                        可以加一些其他内容
+                    </p>
+                </div>
+                <div class="content">
+                    <h2>这里可以插入图片</h2>
+                    
+                </div>
+            </div>
+            <div class="footer">
+                <p>XI'AN JIAOTONG LIVERPOOL UNIVERSITY</p>
+
+            </div>
+        </div>
+    </body>
+</html>

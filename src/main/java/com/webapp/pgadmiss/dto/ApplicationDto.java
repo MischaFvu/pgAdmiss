@@ -11,9 +11,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = false)
 public class ApplicationDto extends Application{
 
-    public ApplicationDto(Application application, Student student) {
-        
-    }
+    
 
 
 }
